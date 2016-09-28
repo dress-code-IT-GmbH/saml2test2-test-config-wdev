@@ -29,7 +29,7 @@ class Config(CommonConfig):
         If true, do not validate TLS certificates
         """
         self.DO_NOT_VALIDATE_TLS = True
-        
+
         self.PORT = 8087
         self.METADATA = [
             {'metadata': [

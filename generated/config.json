@@ -1,308 +1,26 @@
 {
- "FLOWS_PROFILES": [
-  "saml2int"
- ],
- "IDP_BASE": "https://testidp01.samltest.fed-lab.org",
- "_BASE": "http://localhost:8087/",
- "CONFIG": {
-  "acs-redirect": {
-   "description": "Basic SP",
-   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
-   "service": {
-    "sp": {
-     "endpoints": {
-      "assertion_consumer_service": [
-       [
-        "http://localhost:8087/acs/redirect",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-       ]
-      ],
-      "single_logout_service": [
-       [
-        "http://localhost:8087/slo",
-        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-       ]
-      ],
-      "discovery_response": [
-       [
-        "http://localhost:8087/disco",
-        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
-       ]
-      ]
-     }
-    }
-   },
-   "cert_file": "pki/mycert.pem",
-   "entityid": "http://localhost:8087/basic/sp.xml",
-   "key_file": "pki/mykey.pem"
-  },
-  "required": {
-   "description": "Required Attributes SP",
-   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
-   "service": {
-    "sp": {
-     "endpoints": {
-      "assertion_consumer_service": [
-       [
-        "http://localhost:8087/acs/redirect",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-       ],
-       [
-        "http://localhost:8087/acs/post",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-       ],
-       [
-        "http://localhost:8087/acs/artifact",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
-       ],
-       [
-        "http://localhost:8087/ecp",
-        "urn:oasis:names:tc:SAML:2.0:bindings:PAOS"
-       ]
-      ],
-      "single_logout_service": [
-       [
-        "http://localhost:8087/slo",
-        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-       ]
-      ],
-      "discovery_response": [
-       [
-        "http://localhost:8087/disco",
-        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
-       ]
-      ]
-     },
-     "required_attributes": [
-      "eduPersonPrincipalName",
-      "eduPersonScopedAffiliation",
-      "mail"
-     ],
-     "name": "SP that requires attributes",
-     "optional_attributes": [
-      "displayName",
-      "schacHomeOrganization"
-     ]
-    }
-   },
-   "cert_file": "pki/mycert.pem",
-   "entityid": "http://localhost:8087/required/sp.xml",
-   "key_file": "pki/mykey.pem"
-  },
-  "acs-post": {
-   "description": "Basic SP",
-   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
-   "service": {
-    "sp": {
-     "endpoints": {
-      "assertion_consumer_service": [
-       [
-        "http://localhost:8087/acs/post",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-       ]
-      ],
-      "single_logout_service": [
-       [
-        "http://localhost:8087/slo",
-        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-       ]
-      ],
-      "discovery_response": [
-       [
-        "http://localhost:8087/disco",
-        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
-       ]
-      ]
-     }
-    }
-   },
-   "cert_file": "pki/mycert.pem",
-   "entityid": "http://localhost:8087/basic/sp.xml",
-   "key_file": "pki/mykey.pem"
-  },
-  "acs-ecp": {
-   "description": "Basic SP",
-   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
-   "service": {
-    "sp": {
-     "endpoints": {
-      "assertion_consumer_service": [
-       [
-        "http://localhost:8087/ecp",
-        "urn:oasis:names:tc:SAML:2.0:bindings:PAOS"
-       ]
-      ],
-      "single_logout_service": [
-       [
-        "http://localhost:8087/slo",
-        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-       ]
-      ],
-      "discovery_response": [
-       [
-        "http://localhost:8087/disco",
-        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
-       ]
-      ]
-     }
-    }
-   },
-   "cert_file": "pki/mycert.pem",
-   "entityid": "http://localhost:8087/basic/sp.xml",
-   "key_file": "pki/mykey.pem"
-  },
-  "acs-artifact": {
-   "description": "Basic SP",
-   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
-   "service": {
-    "sp": {
-     "endpoints": {
-      "assertion_consumer_service": [
-       [
-        "http://localhost:8087/acs/artifact",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
-       ]
-      ],
-      "single_logout_service": [
-       [
-        "http://localhost:8087/slo",
-        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-       ]
-      ],
-      "discovery_response": [
-       [
-        "http://localhost:8087/disco",
-        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
-       ]
-      ]
-     }
-    }
-   },
-   "cert_file": "pki/mycert.pem",
-   "entityid": "http://localhost:8087/basic/sp.xml",
-   "key_file": "pki/mykey.pem"
-  },
-  "coco": {
-   "description": "CoCo SP",
-   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
-   "service": {
-    "sp": {
-     "endpoints": {
-      "assertion_consumer_service": [
-       [
-        "http://localhost:8087/acs/redirect",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-       ],
-       [
-        "http://localhost:8087/acs/post",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-       ],
-       [
-        "http://localhost:8087/acs/artifact",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
-       ],
-       [
-        "http://localhost:8087/ecp",
-        "urn:oasis:names:tc:SAML:2.0:bindings:PAOS"
-       ]
-      ],
-      "single_logout_service": [
-       [
-        "http://localhost:8087/slo",
-        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-       ]
-      ],
-      "discovery_response": [
-       [
-        "http://localhost:8087/disco",
-        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
-       ]
-      ]
-     },
-     "required_attributes": [
-      "eduPersonPrincipalName",
-      "eduPersonScopedAffiliation",
-      "mail"
-     ],
-     "name": "Code of Conduct SP",
-     "optional_attributes": [
-      "displayName",
-      "schacHomeOrganization"
-     ]
-    }
-   },
-   "cert_file": "pki/mycert.pem",
-   "entity_category": [
-    "http://www.geant.net/uri/dataprotection-code-of-conduct/v1"
-   ],
-   "entityid": "http://localhost:8087/coco/sp.xml",
-   "key_file": "pki/mykey.pem"
-  },
-  "rs": {
-   "description": "RS SP",
-   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
-   "service": {
-    "sp": {
-     "endpoints": {
-      "assertion_consumer_service": [
-       [
-        "http://localhost:8087/acs/redirect",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-       ],
-       [
-        "http://localhost:8087/acs/post",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-       ],
-       [
-        "http://localhost:8087/acs/artifact",
-        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
-       ],
-       [
-        "http://localhost:8087/ecp",
-        "urn:oasis:names:tc:SAML:2.0:bindings:PAOS"
-       ]
-      ],
-      "single_logout_service": [
-       [
-        "http://localhost:8087/slo",
-        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-       ]
-      ],
-      "discovery_response": [
-       [
-        "http://localhost:8087/disco",
-        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
-       ]
-      ]
-     }
-    }
-   },
-   "cert_file": "pki/mycert.pem",
-   "entity_category": [
-    "http://refeds.org/category/research-and-scholarship"
-   ],
-   "entityid": "http://localhost:8087/rs/sp.xml",
-   "key_file": "pki/mykey.pem"
-  }
+ "CONTENT_HANDLER_TRIGGER": {
+  "IDP-AuthnRedirect-nid_unspecified": [
+   "https://testidp01.samltest.fed-lab.org/idp/profile/SAML2/Redirect/SSO"
+  ]
  },
- "config_errors": [],
- "FLOWS": [
-  "flows.yaml"
- ],
+ "DO_NOT_VALIDATE_TLS": true,
+ "ENTITY_ID": "https://testidp01.samltest.fed-lab.org/idp/shibboleth",
+ "PORT": 8087,
  "CONTENT_HANDLER_INTERACTION": [
   {
    "page-type": "login",
    "matches": {
-    "title": "Web Login Service",
-    "url": "https://testidp01.samltest.fed-lab.org/idp/profile/SAML2/Redirect/SSO"
+    "url": "https://testidp01.samltest.fed-lab.org/idp/profile/SAML2/Redirect/SSO",
+    "title": "Web Login Service"
    },
    "control": {
-    "type": "form",
     "set": {
+     "j_password": "test",
      "j_username": "tester@testinetics.at",
-     "_eventId_proceed": "",
-     "j_password": "test"
-    }
+     "_eventId_proceed": ""
+    },
+    "type": "form"
    }
   },
   {
@@ -312,9 +30,9 @@
     "url": "https://testidp01.samltest.fed-lab.org/idp/profile/SAML2/Redirect/SSO"
    },
    "control": {
-    "type": "form",
+    "set": {},
     "index": 0,
-    "set": {}
+    "type": "form"
    }
   },
   {
@@ -324,19 +42,13 @@
     "url": "https://testidp01.samltest.fed-lab.org/idp/profile/SAML2/Redirect/SSO"
    },
    "control": {
-    "type": "form",
-    "index": 0,
     "submit": "_eventId_proceed",
-    "set": {}
+    "set": {},
+    "index": 0,
+    "type": "form"
    }
   }
  ],
- "config_infos": [],
- "CONTENT_HANDLER_TRIGGER": {
-  "IDP-AuthnRedirect-nid_unspecified": [
-   "https://testidp01.samltest.fed-lab.org/idp/profile/SAML2/Redirect/SSO"
-  ]
- },
  "METADATA": [
   {
    "metadata": [
@@ -347,7 +59,296 @@
    "class": "saml2.mdstore.MetaDataExtern"
   }
  ],
- "DO_NOT_VALIDATE_TLS": true,
- "PORT": 8087,
- "ENTITY_ID": "https://testidp01.samltest.fed-lab.org/idp/shibboleth"
+ "CONFIG": {
+  "acs-artifact": {
+   "key_file": "pki/mykey.pem",
+   "service": {
+    "sp": {
+     "endpoints": {
+      "assertion_consumer_service": [
+       [
+        "http://localhost:8087/acs/artifact",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
+       ]
+      ],
+      "discovery_response": [
+       [
+        "http://localhost:8087/disco",
+        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+       ]
+      ],
+      "single_logout_service": [
+       [
+        "http://localhost:8087/slo",
+        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+       ]
+      ]
+     }
+    }
+   },
+   "cert_file": "pki/mycert.pem",
+   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+   "description": "Basic SP",
+   "entityid": "http://localhost:8087/basic/sp.xml"
+  },
+  "acs-post": {
+   "key_file": "pki/mykey.pem",
+   "service": {
+    "sp": {
+     "endpoints": {
+      "assertion_consumer_service": [
+       [
+        "http://localhost:8087/acs/post",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+       ]
+      ],
+      "discovery_response": [
+       [
+        "http://localhost:8087/disco",
+        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+       ]
+      ],
+      "single_logout_service": [
+       [
+        "http://localhost:8087/slo",
+        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+       ]
+      ]
+     }
+    }
+   },
+   "cert_file": "pki/mycert.pem",
+   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+   "description": "Basic SP",
+   "entityid": "http://localhost:8087/basic/sp.xml"
+  },
+  "acs-ecp": {
+   "key_file": "pki/mykey.pem",
+   "service": {
+    "sp": {
+     "endpoints": {
+      "assertion_consumer_service": [
+       [
+        "http://localhost:8087/ecp",
+        "urn:oasis:names:tc:SAML:2.0:bindings:PAOS"
+       ]
+      ],
+      "discovery_response": [
+       [
+        "http://localhost:8087/disco",
+        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+       ]
+      ],
+      "single_logout_service": [
+       [
+        "http://localhost:8087/slo",
+        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+       ]
+      ]
+     }
+    }
+   },
+   "cert_file": "pki/mycert.pem",
+   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+   "description": "Basic SP",
+   "entityid": "http://localhost:8087/basic/sp.xml"
+  },
+  "acs-redirect": {
+   "key_file": "pki/mykey.pem",
+   "service": {
+    "sp": {
+     "endpoints": {
+      "assertion_consumer_service": [
+       [
+        "http://localhost:8087/acs/redirect",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+       ]
+      ],
+      "discovery_response": [
+       [
+        "http://localhost:8087/disco",
+        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+       ]
+      ],
+      "single_logout_service": [
+       [
+        "http://localhost:8087/slo",
+        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+       ]
+      ]
+     }
+    }
+   },
+   "cert_file": "pki/mycert.pem",
+   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+   "description": "Basic SP",
+   "entityid": "http://localhost:8087/basic/sp.xml"
+  },
+  "coco": {
+   "key_file": "pki/mykey.pem",
+   "service": {
+    "sp": {
+     "required_attributes": [
+      "eduPersonPrincipalName",
+      "eduPersonScopedAffiliation",
+      "mail"
+     ],
+     "name": "Code of Conduct SP",
+     "endpoints": {
+      "assertion_consumer_service": [
+       [
+        "http://localhost:8087/acs/redirect",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+       ],
+       [
+        "http://localhost:8087/acs/post",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+       ],
+       [
+        "http://localhost:8087/acs/artifact",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
+       ],
+       [
+        "http://localhost:8087/ecp",
+        "urn:oasis:names:tc:SAML:2.0:bindings:PAOS"
+       ]
+      ],
+      "discovery_response": [
+       [
+        "http://localhost:8087/disco",
+        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+       ]
+      ],
+      "single_logout_service": [
+       [
+        "http://localhost:8087/slo",
+        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+       ]
+      ]
+     },
+     "optional_attributes": [
+      "displayName",
+      "schacHomeOrganization"
+     ]
+    }
+   },
+   "entity_category": [
+    "http://www.geant.net/uri/dataprotection-code-of-conduct/v1"
+   ],
+   "cert_file": "pki/mycert.pem",
+   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+   "description": "CoCo SP",
+   "entityid": "http://localhost:8087/coco/sp.xml"
+  },
+  "required": {
+   "key_file": "pki/mykey.pem",
+   "service": {
+    "sp": {
+     "required_attributes": [
+      "eduPersonPrincipalName",
+      "eduPersonScopedAffiliation",
+      "mail"
+     ],
+     "name": "SP that requires attributes",
+     "endpoints": {
+      "assertion_consumer_service": [
+       [
+        "http://localhost:8087/acs/redirect",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+       ],
+       [
+        "http://localhost:8087/acs/post",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+       ],
+       [
+        "http://localhost:8087/acs/artifact",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
+       ],
+       [
+        "http://localhost:8087/ecp",
+        "urn:oasis:names:tc:SAML:2.0:bindings:PAOS"
+       ]
+      ],
+      "discovery_response": [
+       [
+        "http://localhost:8087/disco",
+        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+       ]
+      ],
+      "single_logout_service": [
+       [
+        "http://localhost:8087/slo",
+        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+       ]
+      ]
+     },
+     "optional_attributes": [
+      "displayName",
+      "schacHomeOrganization"
+     ]
+    }
+   },
+   "cert_file": "pki/mycert.pem",
+   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+   "description": "Required Attributes SP",
+   "entityid": "http://localhost:8087/required/sp.xml"
+  },
+  "rs": {
+   "key_file": "pki/mykey.pem",
+   "service": {
+    "sp": {
+     "endpoints": {
+      "assertion_consumer_service": [
+       [
+        "http://localhost:8087/acs/redirect",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+       ],
+       [
+        "http://localhost:8087/acs/post",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+       ],
+       [
+        "http://localhost:8087/acs/artifact",
+        "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
+       ],
+       [
+        "http://localhost:8087/ecp",
+        "urn:oasis:names:tc:SAML:2.0:bindings:PAOS"
+       ]
+      ],
+      "discovery_response": [
+       [
+        "http://localhost:8087/disco",
+        "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+       ]
+      ],
+      "single_logout_service": [
+       [
+        "http://localhost:8087/slo",
+        "urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+       ]
+      ]
+     }
+    }
+   },
+   "entity_category": [
+    "http://refeds.org/category/research-and-scholarship"
+   ],
+   "cert_file": "pki/mycert.pem",
+   "name_form": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+   "description": "RS SP",
+   "entityid": "http://localhost:8087/rs/sp.xml"
+  }
+ },
+ "config_errors": [],
+ "config_infos": [],
+ "_BASE": "http://localhost:8087/",
+ "FLOWS": [
+  "flows.yaml"
+ ],
+ "FLOWS_PROFILES": [
+  "saml2int"
+ ],
+ "IDP_BASE": "https://testidp01.samltest.fed-lab.org",
+ "ACCESS_CONTROL_FILE": "./saml2test2_access"
 }
