@@ -23,7 +23,7 @@ class Config(CommonConfig):
         """
         File with <github username>:<emailaddress> pairs to allow web usage
         """
-        self.ACCESS_CONTROL_FILE = './saml2test2_access'
+        self.ACCESS_CONTROL_FILE = './saml2test2_access.yaml'
 
         """
         If true, do not validate TLS certificates
