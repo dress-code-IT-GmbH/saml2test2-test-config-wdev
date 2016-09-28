@@ -20,7 +20,16 @@ class Config(CommonConfig):
     def config(self):
         super(Config,self).config()
 
-        self.DO_NOT_VALIDATE_TLS = True  # Do not validate TLS certificates
+        """
+        File with <github username>:<emailaddress> pairs to allow web usage
+        """
+        self.ACCESS_CONTROL_FILE = './saml2test2_access'
+
+        """
+        If true, do not validate TLS certificates
+        """
+        self.DO_NOT_VALIDATE_TLS = True
+        
         self.PORT = 8087
         self.METADATA = [
             {'metadata': [

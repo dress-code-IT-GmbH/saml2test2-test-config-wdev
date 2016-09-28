@@ -15,6 +15,13 @@ class Config(Abstractconfig):
     def config(self):
         super(Config, self).config()
 
+        self.FLOWS = [
+            "flows.yaml",
+        ]
+        self.FLOWS_PROFILES = [
+            "saml2int",
+        ]
+
         self.IDP_BASE = "https://testidp01.samltest.fed-lab.org"
         self.ENTITY_ID = "%s/idp/shibboleth" % self.IDP_BASE
         self.CONTENT_HANDLER_TRIGGER = {
